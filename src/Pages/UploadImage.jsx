@@ -34,7 +34,11 @@ function UploadImage() {
   const postDetails = (pic) => {
     setLoading(true);
     if (pic == undefined) return;
-    if (pic.type === "image/jpeg" || pic.type === "image/png") {
+    if (
+      pic.type === "image/jpeg" ||
+      pic.type === "image/png" ||
+      pic.type === "image/jpg"
+    ) {
       const data = new FormData();
       data.append("file", pic);
       data.append("upload_preset", "Image-Uploader");
